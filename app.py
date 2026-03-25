@@ -17,10 +17,10 @@ st.set_page_config(
 def load_airthmind_models():
     """Load semua model .pkl sekali saja agar cepat."""
     try:
-        model_xgb = joblib.load('airthmind_model.pkl')
-        scaler = joblib.load('airthmind_scaler.pkl')
-        le_zone = joblib.load('airthmind_le_zone.pkl')
-        model_prophet = joblib.load('airthmind_prophet_model.pkl')
+        model_xgb = joblib.load('models/airthmind_model.pkl')
+        scaler = joblib.load('models/airthmind_scaler.pkl')
+        le_zone = joblib.load('models/airthmind_le_zone.pkl')
+        model_prophet = joblib.load('models/airthmind_prophet_model.pkl')
         return model_xgb, scaler, le_zone, model_prophet
     except FileNotFoundError as e:
         st.error(f"❌ Error: File model tidak ditemukan! ({e})")
